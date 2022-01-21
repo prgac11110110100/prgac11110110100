@@ -33,7 +33,7 @@ $(document).ready(function() {
 function redirectListarRastreios() {
 	window.setTimeout(function() {
 		var raiz = window.location.origin;
-		var projeto = "/simple-crud-jee";
+		var projeto = "/alexclemente-testejava";
 		var action = "/listarRastreios"
 
 		var urlTomcat = raiz + projeto;
@@ -46,7 +46,7 @@ function redirectListarRastreios() {
 			window.location = urlTomcat + action;
 		} else if (window.location.href === urlJetty + "/formNovoRastreio"){
 			window.location = urlJetty + action;
-		} else if (urlAtual.match(/simple-crud-jee/)){
+		} else if (urlAtual.match(/alexclemente-testejava/)){
 			window.location = urlTomcat + action;
 		} else if (urlAtual.match(/formAtualizarRastreio/)){
 			window.location = urlJetty + action;
