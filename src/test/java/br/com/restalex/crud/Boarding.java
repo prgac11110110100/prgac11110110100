@@ -16,7 +16,7 @@ public class Boarding {
 		int port = 8080;
 		Server server = new Server(port);
 
-		String wardir = "target/simple-crud-jee-1.0.0-SNAPSHOT";
+		String wardir = "target/alexclemente-testejava-1.0.0-SNAPSHOT";
 
 		WebAppContext context = new WebAppContext();
 		context.setResourceBase(wardir);
