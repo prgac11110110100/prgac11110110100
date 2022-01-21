@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>config-file jdbc xml:</comment>
+<entry key="jdbc.url">jdbc:postgresql://localhost:5432</entry>
+<entry key="jdbc.driver">org.postgresql.Driver</entry>
+
+<!--  https://www.postgresql.org/docs/9.6/ddl-schemas.html
+ -->
+<entry key="jdbc.dataBase">postgres</entry>
+
+<entry key="jdbc.user">postgres</entry>
+<entry key="jdbc.passwd">alexclemente</entry>
+</properties>
