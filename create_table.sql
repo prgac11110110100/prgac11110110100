@@ -1,3 +1,6 @@
+CREATE SCHEMA testejava; 
+
+
 -- drop sequence testejava_rastrear;
 CREATE SEQUENCE testejava_rastrear start 2 increment 2;
 
