@@ -84,7 +84,7 @@
 		</div>
 	</div>
 	<div class="container table-responsive">
-		<h2 class="text-center">Rastreamento</h2>
+		<h2 class="text-center">Rastreabilidade</h2>
 		<br />
 		<table class="table toggle-circle-filled table-striped table-hover">
 			<thead>
