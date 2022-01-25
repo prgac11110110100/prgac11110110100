@@ -26,7 +26,6 @@ public class FormAtualizarRastreio extends HttpServlet {
 			rastreio.setNota_fiscal(  req.getParameter("nota_fiscal") );
 			rastreio.setSituacao_rastreio(  req.getParameter("situacao_rastreio") );   
 			rastreio.setDt_rastreio( req.getParameter("dt_rastreio") );        
-			rastreio.setUsu_rastreio( req.getParameter("usu_rastreio") );        
 			req.setAttribute("rastreio", rastreio);
 			req.getRequestDispatcher("/WEB-INF/views/rastreio/form/formAtualizarRastreio.jsp").forward(req, resp);
 		} catch (Exception e) {

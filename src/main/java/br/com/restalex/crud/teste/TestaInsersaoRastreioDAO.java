@@ -14,8 +14,7 @@ public class TestaInsersaoRastreioDAO {
 				"UMA ENCOMENDA",     
 				"NF.ENCOM",       
 				"UMA_SITU",    
-				"21/01/2022 14:26",         
-				"usu");	
+				"21/01/2022 14:26");	
 
 		try (Connection con = ConnectionDB.getConnetion()) {
 			RastreioDAO rastreiodao = new RastreioDAO(con);

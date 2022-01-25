@@ -26,21 +26,20 @@ public class NovoRastreio extends HttpServlet {
 		String  nota_fiscal = req.getParameter("nota_fiscal"); 
 		String  situacao_rastreio = req.getParameter("situacao_rastreio");   
 		String  dt_rastreio = req.getParameter("dt_rastreio");        
-		String  usu_rastreio = req.getParameter("usu_rastreio");        
 		
 		Rastreio rastreio = new Rastreio(0L,                 
 				id_encomenda,        
 				descr_encomenda,     
 				nota_fiscal,       
 				situacao_rastreio,    
-				dt_rastreio,         
-				usu_rastreio) ;
+				dt_rastreio) ;
 
 		
 		try (Connection con = ConnectionDB.getConnetion()) {
 			RastreioDAO rastreiodao = new RastreioDAO(con);
 			rastreiodao.inserir(rastreio);
-			req.setAttribute("cliente", rastreio);
+			con.close();
+			req.setAttribute("rastreio", rastreio);
 			req.getRequestDispatcher("/WEB-INF/views/rastreio/novoRastreio.jsp").forward(req,
 						resp);
 		} catch (SQLException e) {

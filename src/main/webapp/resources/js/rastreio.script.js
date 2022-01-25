@@ -6,7 +6,6 @@ $(document).ready(function() {
 		var nota_fiscal = $("#nota_fiscal").val();
 		var situacao_rastreio = $("#situacao_rastreio").val(); 
 		var dt_rastreio = $("#dt_rastreio").val();
-		var usu_rastreio = $("#usu_rastreio").val(); 
 			$.ajax({
 				url : "novoRastreio",
 				type : "POST",
@@ -16,8 +15,7 @@ $(document).ready(function() {
 					descr_encomenda : descr_encomenda,
 					nota_fiscal : nota_fiscal,
 					situacao_rastreio : situacao_rastreio, 
-					dt_rastreio : dt_rastreio,
-					usu_rastreio : usu_rastreio 
+					dt_rastreio : dt_rastreio 
 				},
 				success : function(dados) {
 
@@ -39,6 +37,10 @@ function redirectListarRastreios() {
 		var urlTomcat = raiz + projeto;
 		var urlJetty = raiz;
 		var urlAtual = window.location.href;
+
+
+         console.log("urlTomcat "+ urlTomcat); 
+         console.log("urlJetty "+ urlJetty); 
 
 		if (window.location.href === urlTomcat + "/formNovoRastreio") {
 			window.location = urlTomcat + action;
@@ -62,13 +64,13 @@ function success() {
 	document.getElementById('nota_fiscal').value = '';
 	document.getElementById('situacao_rastreio').value = '';
 	document.getElementById('dt_rastreio').value = '';
-	document.getElementById('usu_rastreio').value = '';
 	redirectListarRastreios();
 }
 /* fim */
 
 /* listar rastreios da action excluir */
 function pegaId(getId){
+console.log(getId);
 	$("#confirmaDelecao").click(function(){
 		excluir(getId);
 		$('.modal').modal('hide');
@@ -105,7 +107,6 @@ $(document).ready(function() {
 		var nota_fiscal = $("#nota_fiscal").val();
 		var situacao_rastreio = $("#situacao_rastreio").val(); 
 		var dt_rastreio = $("#dt_rastreio").val();
-		var usu_rastreio = $("#usu_rastreio").val();		 
 			$.ajax({
 				url : "atualizarRastreio",
 				type : "POST",
@@ -115,8 +116,7 @@ $(document).ready(function() {
 					descr_encomenda : descr_encomenda,
 					nota_fiscal : nota_fiscal,
 					situacao_rastreio : situacao_rastreio, 
-					dt_rastreio : dt_rastreio,
-					usu_rastreio : usu_rastreio 
+					dt_rastreio : dt_rastreio 
 				},
 				success : function(dados) {
 

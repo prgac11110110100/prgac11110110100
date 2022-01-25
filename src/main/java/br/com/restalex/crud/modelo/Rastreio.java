@@ -1,5 +1,8 @@
 package br.com.restalex.crud.modelo;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Rastreio {
 
 	public Long getId() {
@@ -50,21 +53,12 @@ public class Rastreio {
 		this.dt_rastreio = dt_rastreio;
 	}
 
-	public String getUsu_rastreio() {
-		return usu_rastreio;
-	}
-
-	public void setUsu_rastreio(String usu_rastreio) {
-		this.usu_rastreio = usu_rastreio;
-	}
-
 	private Long    id;                 
 	private String  id_encomenda;       
 	private String  descr_encomenda;
 	private String  nota_fiscal; 
 	private String  situacao_rastreio;   
 	private String  dt_rastreio;        
-	private String  usu_rastreio;        
 
 	public Rastreio() {	}
 
@@ -73,15 +67,14 @@ public class Rastreio {
 	String  descr_encomenda,     
 	String  nota_fiscal,       
 	String  situacao_rastreio,    
-	String  dt_rastreio,         
-	String  usu_rastreio) {	
+	String  dt_rastreio) {	
 		this.id = id;
 		this.id_encomenda = id_encomenda; 
 		this.descr_encomenda = descr_encomenda; 
 		this.nota_fiscal = nota_fiscal; 
 		this.situacao_rastreio = situacao_rastreio; 
 		this.dt_rastreio = dt_rastreio; 
-		this.usu_rastreio = usu_rastreio; 
 	}          
 
 }
+

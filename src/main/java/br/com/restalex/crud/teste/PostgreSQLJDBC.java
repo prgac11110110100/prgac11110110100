@@ -16,9 +16,6 @@ public class PostgreSQLJDBC {
          c = DriverManager
             .getConnection("jdbc:postgresql://localhost:5432/postgres",
             "postgres", "alexclemente");
-//         System.out.println("antes:"+c.getSchema());
-//         c.setSchema("testejava");
-//         System.out.println("depois:"+c.getSchema());
          c.setAutoCommit(false);
          System.out.println("Opened database successfully");
 

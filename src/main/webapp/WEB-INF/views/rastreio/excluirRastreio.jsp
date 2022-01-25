@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 function success() {
 	$("div.alert-success").fadeIn(300).delay(2550).fadeOut(400);
-	redirectListarClientes();
+	redirectListarRastreios();
 }
 
 function redirectListarRastreios() {

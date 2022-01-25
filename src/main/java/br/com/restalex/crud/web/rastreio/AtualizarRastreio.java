@@ -29,19 +29,18 @@ public class AtualizarRastreio extends HttpServlet {
 		String  nota_fiscal = req.getParameter("nota_fiscal"); 
 		String  situacao_rastreio = req.getParameter("situacao_rastreio");   
 		String  dt_rastreio = req.getParameter("dt_rastreio");        
-		String  usu_rastreio = req.getParameter("usu_rastreio");        
 		
 		Rastreio rastreio = new Rastreio(0L,                 
 				id_encomenda,        
 				descr_encomenda,     
 				nota_fiscal,       
 				situacao_rastreio,    
-				dt_rastreio,         
-				usu_rastreio) ;
+				dt_rastreio) ;
 		
 		try (Connection con = ConnectionDB.getConnetion()) {
 			RastreioDAO dao = new RastreioDAO(con);
 				dao.atualizar(rastreio);
+				con.close();
 				req.getRequestDispatcher("/WEB-INF/views/rasteio/atualizarRastreio.jsp").forward(req,
 						resp);
 		} catch (SQLException e) {

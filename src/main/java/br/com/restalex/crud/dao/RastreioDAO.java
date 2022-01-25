@@ -26,22 +26,17 @@ public class RastreioDAO {
 		"  descr_encomenda, " +
 		"  nota_fiscal, " +
 		"  situacao_rastreio, " +
-		"  dt_rastreio,  " +
-		"  usu_rastreio )  " +
+		"  dt_rastreio )  " +
 		"VALUES " +
 		"  (nextval('testejava_rastrear'), " +
-		"   ?, ? , ? , ? , ? ,  ? )";  
+		"   ?, ? , ? , ? , ? )";  
 
 		try (PreparedStatement stmt = con.prepareStatement(sql)) {
-			
-			System.out.println( "***INSERT RASTREIO: Conexao aberta ? :" + (con.isClosed()?" Nao.":" Sim.") );
-			
 			stmt.setString(1, rastreio.getId_encomenda() );
 			stmt.setString(2, rastreio.getDescr_encomenda());
 			stmt.setString(3, rastreio.getNota_fiscal());
 			stmt.setString(4, rastreio.getSituacao_rastreio());
 			stmt.setString(5, rastreio.getDt_rastreio());
-			stmt.setString(6, rastreio.getUsu_rastreio());
 			stmt.execute();
 			stmt.close();
 			this.con.close();
@@ -64,8 +59,7 @@ public class RastreioDAO {
 							rs.getString("descr_encomenda"),     
 							rs.getString("nota_fiscal"),       
 							rs.getString("situacao_rastreio"),    
-							rs.getString("dt_rastreio"),         
-							rs.getString("usu_rastreio"));  	
+							rs.getString("dt_rastreio"));  	
 					rastreios.add(rastr);
 				}
 				rs.close();
@@ -77,22 +71,18 @@ public class RastreioDAO {
 	}
 
 	public void atualizar(Rastreio rastreio) throws SQLException {
-		String sql = "UPDATE testejava.rastrear SET nome = ?, sobrenome = ?, email = ? WHERE id = ?";
+		String sql = "UPDATE testejava.rastrear SET id_encomenda = ?, descr_encomenda = ?, nota_fiscal = ?, situacao_rastreio = ?, dt_rastreio = ? WHERE id = ?";
 		
 		try (PreparedStatement stmt = con.prepareStatement(sql)) {
-			
 			stmt.setString(1,rastreio.getId_encomenda());        
 			stmt.setString(2,rastreio.getDescr_encomenda());     
 			stmt.setString(3,rastreio.getNota_fiscal());       
 			stmt.setString(4,rastreio.getSituacao_rastreio());    
 			stmt.setString(5,rastreio.getDt_rastreio());         
-			stmt.setString(6,rastreio.getUsu_rastreio());
-			stmt.setLong(7,rastreio.getId()) ;
-			
+			stmt.setLong(6,rastreio.getId()) ;
 			stmt.execute();
 			stmt.close();
 			this.con.close();
-			System.out.println("Atualizado com Sucesso!");
 		}
 	}
 

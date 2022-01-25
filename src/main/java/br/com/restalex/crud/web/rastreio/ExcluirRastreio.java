@@ -24,6 +24,7 @@ public class ExcluirRastreio extends HttpServlet {
 		try(Connection con = ConnectionDB.getConnetion()){
 			RastreioDAO dao = new RastreioDAO(con);
 			dao.excluir(id);
+			con.close();
 			req.getRequestDispatcher("/WEB-INF/views/rastreio/excluirRastreio.jsp").forward(req, resp);
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());

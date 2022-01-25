@@ -1,3 +1,10 @@
+-- https://www.postgresql.org/docs/9.6/ddl-schemas.html
+
+--  acces mechanism on postgresql 9.6
+--  database.schema.table or other objects
+--
+
+-- criacao de sequence
 CREATE SCHEMA testejava; 
 
 
@@ -12,6 +19,5 @@ CREATE TABLE testejava.rastrear (
   descr_encomenda   VARCHAR(100),
   nota_fiscal       VARCHAR(15) ,
   situacao_rastreio varchar(30) , 
-  dt_rastreio       varchar(20) ,
-  usu_rastreio      varchar(15)  
+  dt_rastreio       varchar(20)  
 );      

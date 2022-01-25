@@ -2,6 +2,8 @@ package br.com.restalex.crud.db;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class JdbcConnection {
@@ -18,23 +20,15 @@ public class JdbcConnection {
 		Properties props = new Properties();
 		
 		try {
-			String dirhome = System.getProperty("user.home");
-			String dirworkspace = "/mydev/sandbox1/alexclemente-testejava/";
+			Path dir_atual = Paths.get("");			
 			String arqproperties = "/properties/config.xml";
-			String strpath = dirhome + dirworkspace + arqproperties;
-			System.out.println("\n " + dirhome +
-					"\n" + dirworkspace + 
-					"\n" + arqproperties );
-
-			// Setamos o arquivo que será lido
-			FileInputStream fis = new FileInputStream(strpath);
-			// método load faz a leitura através do objeto fis
+//			System.out.println("\n " + dir_atual.toAbsolutePath().toString()+arqproperties );
+			FileInputStream fis = new FileInputStream(dir_atual.toAbsolutePath().toString()+arqproperties);
 			props.loadFromXML(fis);
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 			System.out.println("O arquivo não foi encontrado!!!");
 		}
-		// Captura o valor da propriedade, através do nome da propriedade(Key)
 		this.setUser(props.getProperty("jdbc.user"));
 		this.setPasswd(props.getProperty("jdbc.passwd"));
 		this.setDriver(props.getProperty("jdbc.driver"));

@@ -13,16 +13,15 @@ public class ConnectionDB {
 			
 			jdbc.getProps();
 
-			System.out.println("URL[" + jdbc.getUrl() + "]"
-			 + "DB[" + jdbc.getDatabase() + "]" 
-			 + "usr[" + jdbc.getUser() + "]"
-			 + "passw[" + jdbc.getPasswd() + "]" ); 
+//			System.out.println("URL[" + jdbc.getUrl() + "]"
+//			 + "DB[" + jdbc.getDatabase() + "]" 
+//			 + "usr[" + jdbc.getUser() + "]"
+//			 + "passw[" + jdbc.getPasswd() + "]" ); 
 
-			
 			Class.forName(jdbc.getDriver());
 			conect = DriverManager.getConnection(jdbc.getUrl() + "/" + jdbc.getDatabase(),
 					jdbc.getUser(), jdbc.getPasswd());
-			conect.setSchema("testejava");
+			
 		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException(e.getMessage());
 		}

@@ -24,8 +24,8 @@ public class ListarRastreio extends HttpServlet {
 		try (Connection con = ConnectionDB.getConnetion()) {
 			RastreioDAO rastreiodao = new RastreioDAO(con);
 			List<Rastreio> rastreios = rastreiodao.listar();
+			con.close();
 			req.setAttribute("rastreios", rastreios);
-
 			req.getRequestDispatcher("/WEB-INF/views/rastreio/listarRastreio.jsp").forward(req, resp);
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());

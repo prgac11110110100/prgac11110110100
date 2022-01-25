@@ -84,26 +84,27 @@
 		</div>
 	</div>
 	<div class="container table-responsive">
-		<h2 class="text-center">Rastreio cadastrado</h2>
+		<h2 class="text-center">Rastreamento</h2>
 		<br />
 		<table class="table toggle-circle-filled table-striped table-hover">
 			<thead>
 				<tr>
-					<th class="col-md-2" data-toggle="true">Encomenda</th>
-					<th class="text-center col-md-0" data-hide="tablet, phone">Nota Fiscal</th>
-					<th class="text-center col-md-4" data-hide="phone">Dt Rastreio</th>
-					<th class="text-center col-md-2">Ações</th>
+					<th class="col-md-0" data-toggle="true">Encomenda</th>
+					<th class="text-left col-md-0" data-hide="tablet, dt_rastreio">Nota Fiscal</th>
+					<th class="text-left col-md-0" data-hide="dt_rastreio">Dt Rastreio</th>
+					<th class="text-right col-md-0">Ações</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="rastreio" items="${rastreios}">
 					<tr>
-						<td class="">${rastreio.id_encomenda}</td>
-						<td class="text-center">${rastreio.nota_fiscal}</td>
-						<td class="text-center">${rastreio.dt_rastreio}</td>
-						<td class="text-center"><a
-							href="formAtualizarRastreio?id=${rastreio.id}&id_encomenda=${rastreio.id_encomenda}&nota_fiscal=${rastreio.nota_fiscal}&dt_rastreio=${rastreio.dt_rastreio}"
-							class="btn btn-info"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>editar</a> <a
+						<td class="text-left">${rastreio.id_encomenda}</td>
+						<td class="text-left">${rastreio.nota_fiscal}</td>
+						<td class="text-left">${rastreio.dt_rastreio}</td>
+						<td class="text-left">${rastreio.descr_encomenda}</td>
+						<td class="text-left">${rastreio.situacao_rastreio}</td>
+						<td class="text-right"><a
+href="formAtualizarRastreio?id=${rastreio.id}&id_encomenda=${rastreio.id_encomenda}&nota_fiscal=${rastreio.nota_fiscal}&dt_rastreio=${rastreio.dt_rastreio}&descr_encomenda=${rastreio.descr_encomenda}&situacao_rastreio=${rastreio.situacao_rastreio}"							class="btn btn-info"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>editar</a> <a
 							href="#deletar-dado" role="button" onclick="pegaId(${rastreio.id});" class="btn btn-danger" data-toggle="modal"
 							data-target="#deletar-dado" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>excluir</a></td>
 					</tr>

@@ -32,6 +32,7 @@
 
 <!-- BootstrapValidator JS -->
 <script src="resources/js/bootstrapValidator.min.js"></script>
+<script src="resources/js/rastreioValidator.js" type="text/javascript"></script>
 <script src="resources/js/rastreio.script.js" type="text/javascript"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -78,32 +79,53 @@
 				<legend class="text-center">Atualizar Rastreio</legend>
 
 				<input type="hidden" name="id" id="id" value="${rastreio.id}" />
+				
 				<!-- nome input-->
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="id_encomenda">Encomenda</label>
-					<div class="col-md-4">
-						<input id="id_encomenda" name="id_encomenda" type="text" value="${rastreio.id_encomenda}" placeholder="Digite a descr identificadora da encomenda. "
+					<label class="col-md-2 control-label" for="id_encomenda">Encomenda</label>
+					<div class="col-md-2">
+						<input id="id_encomenda" name="id_encomenda" type="text" value="${rastreio.id_encomenda}" placeholder="Digite a identificacao. "
+							class="form-control input-md">
+					</div>
+				</div>				
+				
+				<!-- descr encomenda-->
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="descr_encomenda">DescrEncomenda</label>
+					<div class="col-md-2">
+						<input id="descr_encomenda" name="descr_encomenda" type="text" value="${rastreio.descr_encomenda}" placeholder="Digite a descr identificadora da encomenda. "
 							class="form-control input-md">
 					</div>
 				</div>
 
 				<!-- nota_fiscal input-->
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="nota_fiscal">NotaFiscal</label>
-					<div class="col-md-4">
+					<label class="col-md-2 control-label" for="nota_fiscal">NotaFiscal</label>
+					<div class="col-md-2">
 						<input id="nota_fiscal" name="nota_fiscal" type="text" value="${rastreio.nota_fiscal}"
 							placeholder="Digite aqui o seu sobrenome" class="form-control input-md">
 					</div>
 				</div>
 
+				<!-- situacao rastreio-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="situacao_rastreio">Situacao Rastreio</label>
+					<div class="col-md-4">
+						<input id="situacao_rastreio" name="situacao_rastreio" type="text" value="${rastreio.situacao_rastreio}" placeholder="Digite a situacao do rastreio. "
+							class="form-control input-md">
+				</div>
+                
+                
 				<!-- dt_rastreio input-->
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="dt_rastreio">Dt Rastreio</label>
-					<div class="col-md-4">
+					<label class="col-md-2 control-label" for="dt_rastreio">Dt Rastreio</label>
+					<div class="col-md-2">
 						<input id="dt_rastreio" name="dt_rastreio" type="text" value="${rastreio.dt_encomenda}" placeholder="99/99/9999"
 							class="form-control input-md">
 					</div>
 				</div>
+
+				
 			</fieldset>
 			<!-- button atualizar -->
 			<button type="submit" class="btn btn-success center-block">

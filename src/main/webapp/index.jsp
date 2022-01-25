@@ -33,7 +33,7 @@
 					<span class="sr-only">barra navegacao</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Teste de JAVA</a>
+				<a class="navbar-brand" href="home">Teste de JAVA</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">

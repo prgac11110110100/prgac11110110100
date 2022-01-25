@@ -28,6 +28,9 @@ public class ServletError extends HttpServlet {
 		req.setAttribute("servletName", servletName);
 		req.setAttribute("requestUri", requestUri);
 
+		  
+
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/views/error/error.jsp");
 		dispatcher.forward(req, resp);
 
