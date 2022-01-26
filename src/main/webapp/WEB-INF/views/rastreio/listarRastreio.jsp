@@ -6,9 +6,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Alex Clemente">
+<meta name="author" content="Rafael Barros">
 <link rel="icon" href="resources/img/favicon.ico">
-<title>Listar Rastreios</title>
+<title>Listar Clientes</title>
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="webjars/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -30,6 +30,8 @@
 <script type="text/javascript" src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="resources/js/footable/footable.js"></script>
 <script type="text/javascript" src="resources/js/rastreio.script.js"></script>
+
+
 
 </head>
 <body>
@@ -84,6 +86,15 @@
 		</div>
 	</div>
 	<div class="container table-responsive">
+					<!-- pesquisa-->
+				<div class="form-group">
+					<label class="col-md-2 control-label" for="pesquisar">Pesquisar</label>
+					<div class="col-md-2">
+						<input id="pesquisar" name="pesquisar" type="text" value="          "
+							placeholder="Digite aqui o seu sobrenome" class="form-control input-md">
+					</div>
+				</div>
+	
 		<h2 class="text-center">Rastreabilidade</h2>
 		<br />
 		<table class="table toggle-circle-filled table-striped table-hover">
@@ -104,7 +115,7 @@
 						<td class="text-left">${rastreio.descr_encomenda}</td>
 						<td class="text-left">${rastreio.situacao_rastreio}</td>
 						<td class="text-right"><a
-href="formAtualizarRastreio?id=${rastreio.id}&id_encomenda=${rastreio.id_encomenda}&nota_fiscal=${rastreio.nota_fiscal}&dt_rastreio=${rastreio.dt_rastreio}&descr_encomenda=${rastreio.descr_encomenda}&situacao_rastreio=${rastreio.situacao_rastreio}"							class="btn btn-info"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>editar</a> <a
+href="formAtualizarRastreio?id=${rastreio.id}&id_encomenda=${rastreio.id_encomenda}&nota_fiscal=${rastreio.nota_fiscal}&dt_rastreio=${rastreio.dt_rastreio}&descr_encomenda=${rastreio.descr_encomenda}&situacao_rastreio=${rastreio.situacao_rastreio}"							class="btn btn-info"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>editar</a> <a
 							href="#deletar-dado" role="button" onclick="pegaId(${rastreio.id});" class="btn btn-danger" data-toggle="modal"
 							data-target="#deletar-dado" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>excluir</a></td>
 					</tr>

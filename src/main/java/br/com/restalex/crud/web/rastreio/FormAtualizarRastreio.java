@@ -21,12 +21,15 @@ public class FormAtualizarRastreio extends HttpServlet {
 		try {
 			Rastreio rastreio = new Rastreio();
 			rastreio.setId(Long.parseLong(req.getParameter("id")) );
-			rastreio.setDescr_encomenda(req.getParameter("id_encomenda"));       
+			rastreio.setId_encomenda(req.getParameter("id_encomenda"));       
 			rastreio.setDescr_encomenda( req.getParameter("descr_encomenda") );
 			rastreio.setNota_fiscal(  req.getParameter("nota_fiscal") );
 			rastreio.setSituacao_rastreio(  req.getParameter("situacao_rastreio") );   
 			rastreio.setDt_rastreio( req.getParameter("dt_rastreio") );        
 			req.setAttribute("rastreio", rastreio);
+			
+			System.out.println("Dispatcher.." + rastreio.getId());
+			
 			req.getRequestDispatcher("/WEB-INF/views/rastreio/form/formAtualizarRastreio.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.getMessage();

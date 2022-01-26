@@ -49,11 +49,13 @@ public class RastreioDAO {
 
 	public List<Rastreio> listar() throws SQLException {
 		List<Rastreio> rastreios = new ArrayList<>();
-		String sql = "SELECT * FROM testejava.rastrear ";
+		String sql = "select id as \"id\", id_encomenda as \"id_encomenda\", descr_encomenda as \"descr_encomenda\", nota_fiscal as \"nota_fiscal\", situacao_rastreio as \"situacao_rastreio\", dt_rastreio as \"dt_rastreio\" FROM testejava.rastrear ";
+		
 		try (PreparedStatement stmt = con.prepareStatement(sql)) {
 			stmt.execute();
 			try (ResultSet rs = stmt.getResultSet()) {
 				while (rs.next()) {
+					System.out.println("GetId["+rs.getLong("id")+"]");
 					Rastreio rastr = new Rastreio(rs.getLong("id"),                  
 							rs.getString("id_encomenda"),        
 							rs.getString("descr_encomenda"),     
@@ -74,14 +76,20 @@ public class RastreioDAO {
 		String sql = "UPDATE testejava.rastrear SET id_encomenda = ?, descr_encomenda = ?, nota_fiscal = ?, situacao_rastreio = ?, dt_rastreio = ? WHERE id = ?";
 		
 		try (PreparedStatement stmt = con.prepareStatement(sql)) {
+			
+			System.out.println("Id"+rastreio.getId()); 
+			
 			stmt.setString(1,rastreio.getId_encomenda());        
 			stmt.setString(2,rastreio.getDescr_encomenda());     
 			stmt.setString(3,rastreio.getNota_fiscal());       
 			stmt.setString(4,rastreio.getSituacao_rastreio());    
 			stmt.setString(5,rastreio.getDt_rastreio());         
 			stmt.setLong(6,rastreio.getId()) ;
+			
 			stmt.execute();
+			
 			stmt.close();
+			
 			this.con.close();
 		}
 	}
