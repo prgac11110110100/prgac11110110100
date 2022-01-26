@@ -58,9 +58,6 @@
 					<li><a href="home"><button class="btn btn-info">
 								<span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
 							</button></a></li>
-					<li><a href="formNovoRastreio"><button class="btn btn-success">
-								<span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> Incluir Rastro
-							</button></a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -130,7 +127,7 @@
 		
 			<!-- button atualizar -->
 			<button type="submit" class="btn btn-success center-block">
-				<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Atualizar
+				<span class="glyphicon glyphicon-file" aria-hidden="true"></span> Atualizar
 			</button>
 		</form>
 	</div>
