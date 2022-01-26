@@ -37,9 +37,10 @@ public class RastreioDAO {
 			stmt.setString(3, rastreio.getNota_fiscal());
 			stmt.setString(4, rastreio.getSituacao_rastreio());
 			stmt.setString(5, rastreio.getDt_rastreio());
+			con.setAutoCommit(false);
 			stmt.execute();
+			con.commit();
 			stmt.close();
-			this.con.close();
 			System.out.println("Dados incluidos. ");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -67,7 +68,6 @@ public class RastreioDAO {
 				rs.close();
 			}
 			stmt.close();
-			this.con.close();
 		}
 		return rastreios;
 	}
@@ -77,7 +77,7 @@ public class RastreioDAO {
 		
 		try (PreparedStatement stmt = con.prepareStatement(sql)) {
 			
-			System.out.println("Id"+rastreio.getId()); 
+			System.out.println("Atualizar Id"+rastreio.getId()); 
 			
 			stmt.setString(1,rastreio.getId_encomenda());        
 			stmt.setString(2,rastreio.getDescr_encomenda());     
@@ -90,7 +90,6 @@ public class RastreioDAO {
 			
 			stmt.close();
 			
-			this.con.close();
 		}
 	}
 
@@ -101,10 +100,11 @@ public class RastreioDAO {
 
 		String sql = "DELETE FROM testejava.rastrear WHERE id = ?";
 		try (PreparedStatement stmt = con.prepareStatement(sql)) {
+			con.setAutoCommit(false);
 			stmt.setLong(1, id);
 			stmt.execute();
+			con.commit();
 			stmt.close();
-			this.con.close();
 			System.out.println("Excluido com sucesso!");
 		}
 

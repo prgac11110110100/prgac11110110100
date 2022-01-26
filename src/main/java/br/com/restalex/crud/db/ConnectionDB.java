@@ -22,6 +22,7 @@ public class ConnectionDB {
 			conect = DriverManager.getConnection(jdbc.getUrl() + "/" + jdbc.getDatabase(),
 					jdbc.getUser(), jdbc.getPasswd());
 			
+			
 		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException(e.getMessage());
 		}
